@@ -178,7 +178,7 @@ body {
   border-radius: 14px; padding: 12px 4px;
   color: var(--ink);
 }
-.countdown span { display: block; font-size: clamp(1.6rem, 7vw, 2.4rem); font-weight: 600; line-height: 1.2; }
+.countdown span { display: block; font-family: "Noto Sans Bengali", sans-serif; font-size: clamp(1.6rem, 7vw, 2.4rem); font-weight: 600; line-height: 1.2; }
 .countdown small { font-size: .9rem; }
 .countdown-done { font-size: 1.4rem; margin: 0; }
 
