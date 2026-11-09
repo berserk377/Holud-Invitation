@@ -114,7 +114,6 @@ body {
   opacity: .22; z-index: -1;
   animation: spin 120s linear infinite;
 }
-.bismillah { margin: 0 0 8px; color: var(--leaf-deep); font-size: .95rem; }
 .title {
   font-family: "Galada", cursive; font-weight: 400;
   font-size: clamp(3rem, 14vw, 5.5rem);
