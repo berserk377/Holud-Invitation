@@ -70,13 +70,6 @@
   document.getElementById("map-btn").href = C.mapUrl;
   const toUTC = (iso) => new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
   const title = "গায়ে হলুদ — তাহিয়াদ ও আদিবা";
-  const gcal = new URL("https://calendar.google.com/calendar/render");
-  gcal.searchParams.set("action", "TEMPLATE");
-  gcal.searchParams.set("text", title);
-  gcal.searchParams.set("dates", `${toUTC(C.start)}/${toUTC(C.end)}`);
-  gcal.searchParams.set("location", C.venue);
-  gcal.searchParams.set("details", "তাহিয়াদ ও আদিবার গায়ে হলুদ। পোশাক: প্যাস্টেল থিম।");
-  document.getElementById("gcal-btn").href = gcal.toString();
 
   document.getElementById("ics-btn").addEventListener("click", () => {
     const ics = [
