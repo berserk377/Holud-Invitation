@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>গায়ে হলুদ — তাহিয়াদ ও আদিবা</title>
+  <meta name="description" content="তাহিয়াদ ও আদিবার গায়ে হলুদের নিমন্ত্রণ — ১ জানুয়ারি ২০২৭">
+  <meta property="og:title" content="গায়ে হলুদ — তাহিয়াদ ও আদিবা">
+  <meta property="og:description" content="১ জানুয়ারি ২০২৭, বিকাল ৪টা · অ্যারিস্টোক্র্যাট রিসোর্ট পূর্বাচল">
+  <meta name="theme-color" content="#f2a900">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Galada&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Envelope intro -->
+  <div id="envelope-screen" class="envelope-screen">
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="env-letter">
+        <span class="mono">ত <span class="heart">♥</span> আ</span>
+      </div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <button class="env-seal" id="open-btn" aria-label="নিমন্ত্রণপত্র খুলুন">
+        <span>খুলুন</span>
+      </button>
+    </div>
+    <p class="env-hint">নিমন্ত্রণপত্র খুলতে সিলে চাপুন</p>
+  </div>
+
+  <main id="invite" class="invite" aria-hidden="true">
+
+    <div class="garland" aria-hidden="true"></div>
+
+    <section class="hero">
+      <svg class="alpana alpana-hero" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+      <p class="bismillah">বিসমিল্লাহির রাহমানির রাহিম</p>
+      <h1 class="title">গায়ে হলুদ</h1>
+      <p class="names">
+        <span>তাহিয়াদ</span>
+        <span class="amp">ও</span>
+        <span>আদিবা</span>
+      </p>
+      <p class="invite-line">
+        হলুদ ছোঁয়ায় রঙিন হোক নতুন জীবনের শুরু।<br>
+        আমাদের এই আনন্দের দিনে আপনার উপস্থিতি ও দোয়া একান্তভাবে কামনা করছি।
+      </p>
+    </section>
+
+    <section class="card details">
+      <div class="detail">
+        <div class="icon" aria-hidden="true">🌼</div>
+        <h2>তারিখ</h2>
+        <p>শুক্রবার, ১ জানুয়ারি ২০২৭</p>
+      </div>
+      <div class="detail">
+        <div class="icon" aria-hidden="true">🕓</div>
+        <h2>সময়</h2>
+        <p>বিকাল ৪টা</p>
+      </div>
+      <div class="detail">
+        <div class="icon" aria-hidden="true">📍</div>
+        <h2>স্থান</h2>
+        <p>অ্যারিস্টোক্র্যাট রিসোর্ট পূর্বাচল<br>
+          <small>দর্জিবাড়ি, রাথুরা নগরী, কালীগঞ্জ, পূর্বাচল নিউ টাউন</small></p>
+      </div>
+      <div class="actions">
+        <a class="btn" id="map-btn" target="_blank" rel="noopener">ম্যাপে দেখুন</a>
+        <a class="btn btn-ghost" id="gcal-btn" target="_blank" rel="noopener">গুগল ক্যালেন্ডারে যোগ করুন</a>
+        <button class="btn btn-ghost" id="ics-btn" type="button">ক্যালেন্ডার ফাইল (.ics)</button>
+      </div>
+    </section>
+
+    <section class="card countdown-card">
+      <h2 class="section-title">আর মাত্র</h2>
+      <div class="countdown" id="countdown">
+        <div><span id="cd-days">০</span><small>দিন</small></div>
+        <div><span id="cd-hours">০</span><small>ঘণ্টা</small></div>
+        <div><span id="cd-mins">০</span><small>মিনিট</small></div>
+        <div><span id="cd-secs">০</span><small>সেকেন্ড</small></div>
+      </div>
+      <p class="countdown-done" id="countdown-done" hidden>আজ আমাদের গায়ে হলুদ! 🌼</p>
+    </section>
+
+    <section class="card gallery-card" id="gallery-card" hidden>
+      <h2 class="section-title">মুহূর্তগুলো</h2>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="card dress">
+      <h2 class="section-title">পোশাক</h2>
+      <p class="dress-text">প্যাস্টেল থিম</p>
+      <div class="swatches" aria-hidden="true">
+        <span style="background:#f9e79f"></span>
+        <span style="background:#f8c8c4"></span>
+        <span style="background:#c8e6c9"></span>
+        <span style="background:#c5d9f1"></span>
+        <span style="background:#e1cfee"></span>
+      </div>
+      <p class="muted">হালকা ও কোমল রঙের পোশাকে আসার অনুরোধ রইলো।</p>
+    </section>
+
+    <section class="card contacts">
+      <h2 class="section-title">যোগাযোগ</h2>
+      <ul id="contact-list"></ul>
+    </section>
+
+    <footer>
+      <svg class="alpana alpana-foot" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+      <p>আপনার আগমনের অপেক্ষায় রইলাম</p>
+      <p class="mono-foot">ত <span class="heart">♥</span> আ</p>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
