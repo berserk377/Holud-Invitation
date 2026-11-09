@@ -11,24 +11,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Sans+Bengali:wght@600&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
   <!-- Envelope intro -->
   <div id="envelope-screen" class="envelope-screen">
-    <div class="envelope" id="envelope">
-      <div class="env-back"></div>
-      <div class="env-letter">
-        <span class="mono">ত <span class="heart">♥</span> আ</span>
+    <div class="env-stage">
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-letter">
+          <p class="l-small">গায়ে হলুদ</p>
+          <p class="l-names">তাহিয়াদ <span>ও</span> আদিবা</p>
+          <p class="l-date">১ জানুয়ারি ২০২৭</p>
+        </div>
+        <div class="env-pocket-wrap"><div class="env-pocket paper"></div></div>
+        <div class="env-flap-wrap"><div class="env-flap paper"></div></div>
+        <p class="env-script">আপনাকে সাদর আমন্ত্রণ</p>
+        <button class="seal" id="open-btn" aria-label="নিমন্ত্রণপত্র খুলুন">
+          <span class="seal-half seal-l"><span class="seal-face"><span class="seal-mono">ত<i>·</i>আ</span></span></span>
+          <span class="seal-half seal-r"><span class="seal-face"><span class="seal-mono">ত<i>·</i>আ</span></span></span>
+        </button>
       </div>
-      <div class="env-front"></div>
-      <div class="env-flap"></div>
-      <button class="env-seal" id="open-btn" aria-label="নিমন্ত্রণপত্র খুলুন">
-        <span>খুলুন</span>
-      </button>
     </div>
-    <p class="env-hint">নিমন্ত্রণপত্র খুলতে সিলে চাপুন</p>
+    <p class="env-hint">খুলতে সিলে চাপুন</p>
   </div>
 
   <main id="invite" class="invite" aria-hidden="true">
@@ -113,7 +119,7 @@
     </footer>
   </main>
 
-  <script src="config.js?v=4"></script>
-  <script src="script.js?v=4"></script>
+  <script src="config.js?v=5"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

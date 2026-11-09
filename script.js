@@ -53,7 +53,11 @@
   // ---- Envelope ----
   const screen = document.getElementById("envelope-screen");
   const invite = document.getElementById("invite");
-  document.getElementById("open-btn").addEventListener("click", () => {
+  const openBtn = document.getElementById("open-btn");
+  document.body.style.overflow = "hidden";
+  openBtn.addEventListener("click", () => {
+    if (screen.classList.contains("opening")) return;
+    openBtn.disabled = true;
     screen.classList.add("opening");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setTimeout(() => {
@@ -61,10 +65,9 @@
       invite.classList.add("show");
       invite.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "";
-      setTimeout(() => screen.remove(), 800);
-    }, reduce ? 50 : 1600);
+      setTimeout(() => screen.remove(), 1200);
+    }, reduce ? 50 : 2700);
   });
-  document.body.style.overflow = "hidden";
 
   // ---- Map & calendar ----
   document.getElementById("map-btn").href = C.mapUrl;
