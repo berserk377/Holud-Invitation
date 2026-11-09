@@ -277,13 +277,13 @@
   // ---- Map & calendar ----
   document.getElementById("map-btn").href = C.mapUrl;
   const toUTC = (iso) => new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-  const title = "গায়ে হলুদ — তাহিয়াদ ও আদিবা";
+  const title = "সঙ্গীত সন্ধ্যা — তাহিয়াদ ও আদিবা";
 
   document.getElementById("ics-btn").addEventListener("click", () => {
     const ics = [
       "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Holud Invitation//BN",
       "BEGIN:VEVENT",
-      "UID:holud-tahiad-adiba-20270101@invite",
+      "UID:sangeet-tahiad-adiba-20270101@invite",
       `DTSTAMP:${toUTC(new Date().toISOString())}`,
       `DTSTART:${toUTC(C.start)}`, `DTEND:${toUTC(C.end)}`,
       `SUMMARY:${title}`,
@@ -293,7 +293,7 @@
     ].join("\r\n");
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
-    a.download = "gaye-holud.ics";
+    a.download = "sangeet-sondha.ics";
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   });
