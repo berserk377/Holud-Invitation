@@ -195,6 +195,8 @@ body {
 .details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .detail h2 { margin: 4px 0; font-size: 1.1rem; color: var(--leaf-deep); }
 .detail p { margin: 0; }
+.detail p, .contacts .btn, .countdown-done { font-family: "Noto Sans Bengali", "Hind Siliguri", sans-serif; }
+.detail p small { font-family: "Hind Siliguri", sans-serif; }
 .detail small { color: var(--muted); }
 .icon { font-size: 1.8rem; }
 .actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 8px; }
