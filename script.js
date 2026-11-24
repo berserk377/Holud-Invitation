@@ -189,34 +189,28 @@
     if (running || parts.length || shells.length) requestAnimationFrame(frame);
   }
 
-  // match dragging
+  // tap anywhere: match glides to the fuse and lights it
   const match = document.getElementById("match");
   const flame = match.querySelector(".flame");
-  let drag = null, mx = 0, my = 0, lit = false;
-  const setMatch = () => { match.style.transform = `translate(${mx}px, ${my}px) rotate(${drag ? -8 : -18}deg)`; };
-  setMatch();
-  match.addEventListener("pointerdown", (e) => {
-    if (lit) return;
-    drag = { x: e.clientX - mx, y: e.clientY - my };
-    match.setPointerCapture(e.pointerId);
-    match.classList.add("dragging");
-    match.style.animation = "none";
-    setMatch();
-  });
-  match.addEventListener("pointermove", (e) => {
-    if (!drag) return;
-    mx = e.clientX - drag.x; my = e.clientY - drag.y;
-    setMatch();
+  let lit = false, moving = false;
+  match.style.transform = "rotate(-18deg)";
+  function autoLight() {
+    if (lit || moving) return;
+    moving = true;
     const f = flame.getBoundingClientRect();
     const r = intro.getBoundingClientRect();
-    const fx = f.left + f.width / 2 - r.left, fy = f.top + f.height * 0.8 - r.top;
     const t = fuseTip();
-    if (Math.hypot(fx - t.x, fy - t.y) < 34) ignite();
+    const dx = t.x - (f.left + f.width / 2 - r.left);
+    const dy = t.y - (f.top + f.height * 0.8 - r.top);
+    match.style.animation = "none";
+    match.style.transition = reduce ? "none" : "transform 1s cubic-bezier(.65,0,.35,1), opacity .8s ease";
+    match.style.transform = `translate(${dx}px, ${dy}px) rotate(-18deg)`;
+    setTimeout(ignite, reduce ? 0 : 1050);
+  }
+  intro.addEventListener("click", autoLight);
+  document.addEventListener("keydown", (e) => {
+    if (intro.isConnected && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); autoLight(); }
   });
-  const endDrag = () => { drag = null; match.classList.remove("dragging"); if (!lit) setMatch(); };
-  match.addEventListener("pointerup", endDrag);
-  match.addEventListener("pointercancel", endDrag);
-  fuseBtn.addEventListener("click", ignite);
 
   function finish() {
     intro.classList.add("gone");
@@ -228,7 +222,7 @@
 
   function ignite() {
     if (lit) return;
-    lit = true; drag = null;
+    lit = true;
     intro.classList.add("lit");
     const names = document.getElementById("sky-names");
     if (reduce) {
