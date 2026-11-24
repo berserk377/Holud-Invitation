@@ -89,9 +89,9 @@ body {
 /* Match */
 .match {
   position: absolute; z-index: 5; width: 14px; height: 120px;
-  left: calc(50% + 78px); bottom: 26vh;
+  left: min(calc(50% + 130px), calc(100% - 40px)); bottom: 36vh;
   transform-origin: 50% 85%;
-  animation: fadeUp 1.4s .15s cubic-bezier(.22,1,.36,1) both;
+  animation: fadeIn 1.2s .15s ease both;
   transition: opacity .8s ease;
 }
 .match-inner { position: absolute; inset: 0; }
@@ -122,6 +122,7 @@ body {
 }
 .lit .match { opacity: 0; }
 
+@keyframes fadeIn { from { opacity: 0; } }
 @keyframes fadeUp { from { opacity: 0; transform: translate(var(--tx, 0), 24px); } }
 .anar-wrap { --tx: -46%; }
 

@@ -202,10 +202,18 @@
     const t = fuseTip();
     const dx = t.x - (f.left + f.width / 2 - r.left);
     const dy = t.y - (f.top + f.height * 0.8 - r.top);
+    const from = "translate(0px, 0px) rotate(-18deg)";
+    const to = `translate(${dx}px, ${dy}px) rotate(-18deg)`;
     match.style.animation = "none";
-    match.style.transition = reduce ? "none" : "transform 1s cubic-bezier(.65,0,.35,1), opacity .8s ease";
-    match.style.transform = `translate(${dx}px, ${dy}px) rotate(-18deg)`;
-    setTimeout(ignite, reduce ? 0 : 1050);
+    match.style.transform = to;
+    if (!reduce) {
+      match.animate([
+        { transform: from },
+        { transform: `translate(${dx * 0.55}px, ${dy * 0.55 - 40}px) rotate(-26deg)`, offset: 0.55 },
+        { transform: to }
+      ], { duration: 1500, easing: "cubic-bezier(.45,0,.25,1)" });
+    }
+    setTimeout(ignite, reduce ? 0 : 1550);
   }
   intro.addEventListener("click", autoLight);
   document.addEventListener("keydown", (e) => {
